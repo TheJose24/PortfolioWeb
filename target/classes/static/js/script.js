@@ -65,6 +65,9 @@ const controlMusica = document.querySelector('.control-musica');
 const modoClaro = document.getElementById('icono-modo-claro');
 const body = document.body;
 
+// Variable para almacenar el estado actual del audio (activado o desactivado)
+let audioActivado = true;
+
 // Función para alternar la reproducción de audio
 function toggleAudio() {
     if (reproductorAudio.paused) {
@@ -72,13 +75,39 @@ function toggleAudio() {
         iconoMusica.classList.add('fa-volume-up');
         iconoMusica.classList.remove('fa-volume-off');
         controlMusica.dataset.text = 'Musica: On';
+        audioActivado = true;
     } else {
         reproductorAudio.pause();
         iconoMusica.classList.add('fa-volume-off');
         iconoMusica.classList.remove('fa-volume-up');
         controlMusica.dataset.text = 'Musica: Off';
+        audioActivado = false;
     }
 }
+
+// Función para iniciar la reproducción cuando la página es visible
+function iniciarReproduccion() {
+    if (audioActivado && reproductorAudio.paused) {
+        reproductorAudio.play();
+    }
+}
+
+// Función para detener la reproducción cuando la página no es visible
+function detenerReproduccion() {
+    if (!reproductorAudio.paused) {
+        reproductorAudio.pause();
+    }
+}
+
+// Evento cuando la página se vuelve visible
+document.addEventListener('visibilitychange', function () {
+    if (document.visibilityState === 'visible') {
+        iniciarReproduccion();
+    } else {
+        detenerReproduccion();
+    }
+});
+
 
 // Función para alternar entre el modo oscuro y el modo claro
 function toggleModoClaro() {

@@ -21,11 +21,13 @@ const estadoMusica = document.querySelector('.control-musica');
 
     if (accept) {
         reproducirAudio.play();
+        audioActivado = true;
     } else {
         reproducirAudio.pause();
         icono.classList.add('fa-volume-off');
         icono.classList.remove('fa-volume-up');
         estadoMusica.dataset.text = 'Musica: Off';
+        audioActivado = false;
     }
 
 })();
