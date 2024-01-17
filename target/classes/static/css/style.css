@@ -1,0 +1,2028 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&family=Didact+Gothic&family=Poppins:wght@400;700;800&display=swap");
+
+/*================================================= Estilos generales =================================================*/
+
+body {
+    color: #fff;
+    background: #171717;
+    font-family: "DM Sans", sans-serif;
+    transition: background 0.6s, color 0.6s;
+}
+
+/*Se aplica al body cuando se activa el modo claro*/
+.modo-claro {
+    background: #fff;
+    color: #212121;
+    transition: background 0.6s, color 0.6s;
+}
+
+.modo-claro .contactame{
+    border: 1px solid #171717 !important;
+    background: #fff !important;
+    color: #000;
+}
+
+.modo-claro .contactame:hover,
+.modo-claro .descargar-cv:hover {
+    background: #171717 !important;
+    color: #fff !important;
+}
+
+.modo-claro .contenedor-boton button:hover {
+    background: #171717 !important;
+    color: #fff !important;
+}
+
+.modo-claro .formulario input {
+    color: #000 !important;
+}
+
+.modo-claro .formulario input {
+    color: #000 !important;
+}
+
+.modo-claro .formulario textarea {
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+/* Estilos para la barra de desplazamiento en todo el documento */
+::-webkit-scrollbar {
+    width: .3125rem;
+    /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-track {
+    background: #171717;
+    /* Color del fondo de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #27ae60;
+    /* Color de la barra de desplazamiento */
+    border-radius: .375rem;
+    /* Radio de los bordes de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1cb698;
+    /* Color de la barra de desplazamiento al pasar el mouse */
+}
+
+html {
+    /*Permite deslizar cuando se hace click en los links del menu*/
+    scroll-behavior: smooth;
+}
+
+/*============================================== Estilos para el encabezado ==============================================*/
+.encabezado {
+    position: fixed;
+    width: calc(100vw - 5.6369% * 2);
+    padding: 0 5.6369% 0 5.6369%;
+    max-height: 9.1884%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #171717;
+    color: #ffffff;
+}
+
+.encabezado h1 {
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.contenedor-mensaje-icono {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+    width: 40px;
+}
+
+.contenedor-mensaje-icono img {
+    width: 100%;
+}
+
+/*============================================== Estilos para la tarjeta de presentacion ==============================================*/
+.contenedor-tarjeta-presentacion {
+    padding: 0 13.90923% 0 13.90923%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100vh;
+}
+
+.tarjeta-presentacion {
+    width: auto;
+    height: auto;
+    font-weight: bold;
+    letter-spacing: 1.6px;
+}
+
+.tarjeta-presentacion h1 {
+    letter-spacing: .1489rem;
+    font-size: 64px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.tarjeta-presentacion .mi-stack {
+    height: 26px;
+    margin: 0;
+    font-size: 20px;
+    color: #828282;
+    font-weight: normal;
+}
+
+/*efecto tipeado*/
+.tarjeta-presentacion p span.escritura-texto {
+    font-weight: normal;
+    color: #828282;
+    font-size: 20px;
+}
+
+.tarjeta-presentacion p span.cursor {
+    display: inline-block;
+    background-color: #ccc;
+    margin-left: 1.6px;
+    width: 3.008px;
+    animation: blink 1s infinite;
+}
+
+.tarjeta-presentacion p span.cursor.tipeado {
+    animation: none;
+}
+
+@keyframes blink {
+    0% {
+        background-color: #f4fefd;
+    }
+
+    49% {
+        background-color: #f4fefd;
+    }
+
+    50% {
+        background-color: transparent;
+    }
+
+    90% {
+        background-color: transparent;
+    }
+
+    100% {
+        background-color: #f4fefd;
+    }
+}
+
+/*fin efecto tipeado*/
+
+.tarjeta-presentacion .botones {
+    margin-top: 9.524%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.botones a {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    padding: 15.008px 24px;
+    font-size: 13.008px;
+    font-weight: 700;
+    border-radius: 1.5625rem;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    letter-spacing: normal;
+}
+
+.tarjeta-presentacion .descargar-cv {
+    background: #27ae60;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.tarjeta-presentacion .contactame {
+    background: #171717;
+    border: .0625rem solid #fff;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.descargar-cv:hover,
+.contactame:hover {
+    background: #fff;
+    color: #171717;
+}
+
+/*============================================== Estilos para la imagen de presentacion ==============================================*/
+.imagen-presentacion {
+    width: 400px;
+    height: 400px;
+    transition: transform 0.3s ease;
+    animation: floatAnimation 3.5s infinite;
+    display: flex;
+    justify-content: center;
+}
+
+.imagen-presentacion .circulo-fondo {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    background: #fff;
+    z-index: -1;
+}
+
+.imagen-presentacion img {
+    position: absolute;
+    width: 100%;
+    top: 1.25rem;
+    z-index: -1;
+    transition: transform 0.3s ease;
+    animation: floatAnimation 3.5s infinite;
+    border-radius: 12.5rem;
+}
+
+@keyframes floatAnimation {
+    0% {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(0, -0.75rem);
+    }
+
+    100% {
+        transform: translate(0, 0);
+    }
+}
+
+/*============================================== Estilos para la barra de navegacion ==============================================*/
+.contenedor-barra-navegacion {
+    position: fixed;
+    top: calc(100vh - 6.12557% - 1.25rem);
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.barra-navegacion {
+    width: 20.625rem;
+    height: 2.5rem;
+    display: flex;
+    border-radius: 1.5625rem;
+    background: #212121;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s;
+}
+
+.barra-navegacion:hover {
+    transform: scale(1.2);
+}
+
+.seccion-1 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: .3125rem;
+}
+
+.seccion-2 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seccion-3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: .3125rem;
+}
+
+.barra-navegacion .contenedor-icono {
+    display: flex;
+    width: 1.875rem;
+    height: 1.875rem;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    background: #333333;
+    border-radius: 50%;
+    margin: .3125rem .3125rem .3125rem .3125rem;
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.contenedor-icono i {
+    color: #fff;
+    cursor: pointer;
+}
+
+.separador-secciones {
+    width: 100%;
+    height: 70%;
+    border: .0625rem solid #fff;
+}
+
+.contenedor-icono:hover {
+    transform: translateY(-0.625rem) scale(1.4);
+}
+
+.contenedor-icono:hover::before {
+    content: attr(data-text);
+    position: absolute;
+    width: max-content;
+    height: fit-content;
+    top: -1.625rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333333;
+    color: #fff;
+    padding: .3125rem;
+    border-radius: .3125rem;
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.2s, visibility 0s linear 0.2s;
+    font-size: .625rem;
+}
+
+.index-activo {
+    width: .375rem;
+    background: #fff;
+    height: .375rem;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -0.125rem;
+}
+
+/*Animacion para el cambio de pagina al seleccionar una seccion*/
+.seccion {
+    display: none;
+}
+
+.activa {
+    display: block;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+/*============================================== Estilos para la seccion de sobre mi ==============================================*/
+.contenedor-sobre-mi {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-sobre-mi .contenedor-tarjeta-sobre-mi {
+    width: 68.03821%;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.contenedor-sobre-mi .contenedor-tarjeta-sobre-mi h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0 0 2.5rem;
+    text-align: center;
+    letter-spacing: .1489rem;
+}
+
+.contenedor-sobre-mi .contenedor-tarjeta-sobre-mi p {
+    width: auto;
+    font-size: 1.25em;
+    font-weight: normal;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+}
+
+.contenedor-tarjeta-sobre-mi .contenedor-iconos {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5rem;
+    flex-wrap: wrap;
+}
+
+.contenedor-iconos .informacion-iconos {
+    width: auto;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.informacion-iconos .circulo-icono-grande {
+    width: 3.875rem;
+    height: 3.875rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: #212121;
+    transition: transform 0.3s;
+}
+
+.informacion-iconos .circulo-icono-pequeño {
+    width: .75rem;
+    height: .75rem;
+    border-radius: 50%;
+    background: #27ae60;
+}
+
+.informacion-iconos .info-icono-texto h2 {
+    margin: 1.125rem 0 .1875rem;
+    font-size: 1.125rem;
+    font-weight: 700;
+    text-align: center;
+}
+
+.informacion-iconos .info-icono-texto p {
+    font-size: 1.125rem;
+    font-weight: normal;
+}
+
+/*============================================== Estilos para la seccion de lo que hago ==============================================*/
+.contenedor-lo-que-hago {
+    width: 85.506vw;
+    height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor-lo-que-hago h1 {
+    font-size: 3em;
+    font-weight: 700;
+    margin: 0 0 2.5rem;
+    text-align: center;
+    letter-spacing: .1489rem;
+}
+
+.contenedor-lo-que-hago .contenedor-tarjetas-lo-que-hago {
+    display: flex;
+    width: 85.506vw;
+    justify-content: space-between;
+}
+
+.contenedor-tarjetas-lo-que-hago .tarjeta {
+    width: 29.967%;
+    height: 15rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+    background: #212121;
+}
+
+.contenedor-tarjetas-lo-que-hago .diseño-movil {
+    border: .0625rem black solid;
+}
+
+.tarjeta .icono-tarjeta {
+    padding-left: 3.125rem;
+    width: 3.5625rem;
+    height: auto;
+}
+
+.tarjeta p {
+    padding-top: 1.875rem;
+    padding-bottom: 1.875rem;
+    margin: 0;
+    padding-left: 3.125rem;
+    font-size: 2.25em;
+    font-weight: 500;
+    color: #535353;
+}
+
+.tarjeta .linea {
+    width: 100%;
+    border-bottom: .3125rem solid #27ae60;
+}
+
+.slider-fondo {
+    background: #212121;
+    width: 99vw;
+    height: 80px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-slider {
+    width: 90vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+.contenedor-slider .slide-track {
+    height: auto;
+    display: flex;
+    animation: scroll 35s linear infinite;
+    -webkit-animation: scroll 15s linear infinite;
+    width: calc(160px * 18);
+}
+
+.contenedor-slider .slide {
+    width: 160px;
+}
+
+.contenedor .slide img {
+    width: 100%;
+}
+
+@keyframes scroll {
+    0% {
+        -webkit-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    100% {
+        -webkit-transform: translateX(calc(-85px * 9));
+        transform: translateX(calc(-85px * 9));
+    }
+}
+
+/*=============================== Estilos para la seccion de proyectos ===============================*/
+
+.contenedor-mis-proyectos {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-mis-proyectos h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin: 0px;
+}
+
+/*=================== Tarjeta Slider ===================*/
+
+.contenedor-mis-proyectos .contenedor-slider-proyectos {
+    width: 100%;
+    height: 380px;
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.contenedor-slider-proyectos .slider-proyectos {
+    width: 100%;
+    height: 380px;
+    border-radius: 2.1875rem;
+    display: flex;
+    transition: transform 0.3s ease;
+}
+
+.slider-proyectos .contenedor-tarjeta-proyectos {
+    box-sizing: border-box;
+    /* Asegura que el padding y el borde se incluyan en el ancho total */
+    height: 23.75rem;
+    /* Establecido el alto del contenido */
+    flex: 0 0 100%;
+}
+
+.contenedor-tarjeta-proyectos .tarjeta-proyecto {
+    display: flex;
+    padding: 1.25rem 3.125rem;
+    background: #212121;
+    margin: 0 6.08%;
+    border-radius: 2.1875rem;
+    align-items: center;
+    height: -webkit-fill-available;
+    color: #ffffff;
+}
+
+.tarjeta-proyecto .img-proyecto {
+    width: auto;
+}
+
+.tarjeta-proyecto .img-proyecto img {
+    width: 100%;
+    border-radius: 2.1875rem;
+}
+
+.tarjeta-proyecto .info-proyecto {
+    width: 487px;
+    height: 309px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-family: "Poppins", serif;
+    margin: 0 10px 0 35px;
+}
+
+.info-proyecto h2 {
+    font-size: 40px;
+    font-weight: 800;
+    margin: 0;
+}
+
+.info-proyecto .cargo {
+    color: #828282;
+    font-size: 18px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.info-proyecto .tecnologias-que-use-texto {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 10px 0 0 0;
+}
+
+.info-proyecto .tecnologias-contenedor {
+    display: flex;
+    margin-left: 10px;
+    width: 476px;
+    height: 5.625rem;
+    flex-wrap: wrap;
+    margin-top: 5px;
+    margin-bottom: 30px;
+}
+
+.tecnologias-contenedor .tecnologias {
+    width: auto;
+    height: fit-content;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: rgba(217, 217, 217, 0.33);
+    border-radius: 25px;
+    padding: 6px 15px 6px 12px;
+    margin: 5px;
+}
+
+.tecnologias-contenedor img {
+    width: 28px;
+    margin-right: 5px;
+}
+
+.tecnologias-contenedor p {
+    font-size: 14px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.info-proyecto .btn-ir-proyecto {
+    display: flex;
+    height: 33px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 35px;
+    border: 1px white solid;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    cursor: pointer;
+    padding: .9375rem 1.75rem;
+    text-decoration: none;
+}
+
+.btn-ir-proyecto:hover {
+    background: #fff;
+    color: #171717;
+}
+
+.btn-ir-proyecto i {
+    font-size: 32px;
+    margin-right: 15px;
+}
+
+.btn-ir-proyecto p {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0;
+}
+
+.contenedor-tarjeta-proyectos .contenedor-detalles-proyectos {
+    height: 100%;
+    position: relative;
+}
+
+.contenedor-detalles-proyectos .img-icono-info {
+    background: #fff;
+    padding: 18px;
+    border-radius: 50%;
+    width: auto;
+    height: 32px;
+    cursor: pointer;
+}
+
+.contenedor-detalles-proyectos .img-icono-info:hover {
+    background: #ccc;
+}
+
+.img-icono-info::before {
+    font-family: "Poppins", serif;
+    content: attr(data-text);
+    position: absolute;
+    width: max-content;
+    height: fit-content;
+    top: 21.5%;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background-color: #27ae60;
+    color: #fff;
+    padding: .3125rem .625rem;
+    border-radius: .3125rem;
+    transition: opacity 0.2s, visibility 0s linear 0.2s, transform 0.2s;
+    font-size: .75rem;
+}
+
+.img-icono-info:hover::before {
+    transform: translateX(-50%) scale(1);
+    transition: transform 0.2s;
+}
+
+.img-icono-info img {
+    width: 32px;
+    height: 32px;
+}
+
+/*=================== Index Tarjeta Slider ===================*/
+
+.contenedor-slider-proyectos .contenedor-index-tarjeta {
+    width: 55px;
+    height: 10px;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 94%;
+}
+
+.contenedor-index-tarjeta .index {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    background: #ffffff;
+}
+
+#index-1 {
+    background: #27ae60;
+}
+
+.contenedor-index-tarjeta .index:hover {
+    background: #7c7c7c;
+}
+
+.indice-activo {
+    background: #27ae60 !important;
+}
+
+.indice-inactivo {
+    background: #ffffff !important;
+}
+
+/*=================== Botones Direccion Slider ===================*/
+
+.contenedor-slider-proyectos .contenedor-botones-slider {
+    width: 92vw;
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 40%;
+}
+
+.contenedor-botones-slider .boton-slider {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #535353;
+    border: 0;
+    cursor: pointer;
+}
+
+.boton-slider a {
+    color: #fff;
+    font-size: 24px;
+}
+
+.boton-slider:hover {
+    background: #27ae60;
+    transform: scale(1.1);
+}
+
+/*==================================== Estilos para las tarjetas de informacio de cada proyecto ====================================*/
+
+.contenedor-mis-proyectos .contenedor-detalle-proyecto-oculto {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(.625rem);
+    display: none;
+    animation: fade-in 0.5s ease-in-out;
+}
+
+.contenedor-mis-proyectos .caja-detalle-proyecto {
+    font-family: "Poppins", serif;
+    border-radius: 1.5625rem;
+    padding: .625rem .9375rem;
+    background: #212121;
+    display: none;
+    color: #ffffff;
+}
+
+.caja-detalle-proyecto header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.caja-detalle-proyecto header h1 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.contenedor-icono-cerrar{
+    cursor: pointer;
+}
+
+.caja-detalle-proyecto .funciones-proyecto {
+    padding: .5rem 1.5rem 1.25rem 1.5rem;
+}
+
+.funciones-proyecto .funciones-texto {
+    display: flex;
+    align-items: center;
+}
+
+.funciones-texto i {
+    font-size: 1.5rem;
+    margin-right: .625rem;
+}
+
+/*========================================= Estilos para la seccion de contacto =========================================*/
+
+.contenedor-contactame {
+    width: 100%;
+    height: 94vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contenedor-contactame h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 1.875rem 0;
+}
+
+/*formulario*/
+.contenedor-formulario {
+    width: 55.19766%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.formulario {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.formulario input {
+    width: 47.48011%;
+    padding: .625rem 0;
+    margin-bottom: 1.125rem;
+    border: none;
+    border-bottom: .0625rem solid #4f4f4f;
+    background: transparent;
+    color: #fff;
+}
+
+.formulario textarea {
+    width: 99.4695%;
+    height: 6.875rem;
+    margin: 1.875rem 0;
+    border: .0625rem solid #4f4f4f;
+    border-radius: .625rem;
+    background: transparent;
+    padding: .625rem .75rem;
+    color: #fff;
+    resize: none;
+}
+
+.formulario .contenedor-boton {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.contenedor-boton button {
+    background: #27ae60;
+    border-radius: 1.25rem;
+    border: none;
+    padding: .75rem 3.125rem;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.contenedor-boton button:hover {
+    background: #fff;
+    color: #171717;
+}
+
+/*animacino al enviar formulario*/
+.spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #ffffff;
+    border-radius: 50%;
+    width: 10px;
+    height: 10px;
+    animation: spin 1s linear infinite;
+    display: none; /* Inicialmente oculto */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/*imagen formulario*/
+
+.contenedor-contactame .imagen-contactame {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    width: 80%;
+    justify-content: flex-end;
+    visibility: hidden;
+}
+
+.imagen-contactame img {
+    width: 22.87701%;
+    visibility: visible;
+}
+
+/*==================================== Chat Bot ===================================*/
+/* Estilos para la barra de desplazamiento del chat */
+.contenedor-chat::-webkit-scrollbar {
+    width: 0;
+    /* Ancho de la barra de desplazamiento */
+}
+/*
+.contenedor-chat::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    Color del fondo de la barra de desplazamiento
+}
+*/
+
+/*
+.contenedor-chat::-webkit-scrollbar-thumb {
+    background: #888;
+     Color de la barra de desplazamiento
+    border-radius: .375rem;
+     Radio de los bordes de la barra de desplazamiento
+}
+*/
+
+/*
+.contenedor-chat::-webkit-scrollbar-thumb:hover {
+    background: #555;
+     Color de la barra de desplazamiento al pasar el mouse
+}
+*/
+
+/* Estilos general de los contenedores principales */
+.contenedor-chatbot {
+    position: fixed;
+    display: flex;
+    top: 3.75rem;
+    right: 0;
+    width: 100vw;
+    height: calc(100vh - 3.75rem);
+    justify-content: center;
+    z-index: 1;
+    clip-path: circle(0% at 100% 0);
+    transition: clip-path 0.8s ease-in-out;
+}
+
+.contenedor-chatbot .chat-bot {
+    width: 84.92%;
+    height: 92.92%;
+    background: rgba(206, 206, 206, 0.1);
+    border-radius: 1.25rem;
+    border: .0625rem rgba(255, 255, 255, 0.8) solid;
+    backdrop-filter: blur(2.1875rem);
+}
+
+.chat-bot .contenedor-chat {
+    padding: 1.875rem;
+    width: calc(100% - 1.875rem * 2);
+    height: 70.85%;
+    overflow-y: auto;
+}
+
+/* estilo de las cajas de mensaje general*/
+.contenedor-chat .contenedor-mensaje {
+    display: flex;
+    max-width: 100%;
+    margin-bottom: .9375rem;
+}
+
+.contenedor-mensaje .img-mensaje-bot {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    border: .3125rem #212121 solid;
+    background: #c4c4c4;
+    margin-right: .3125rem;
+}
+
+.img-mensaje-bot img {
+    width: 100%;
+    border-radius: 50%;
+}
+
+.contenedor-mensaje.bot:nth-child(2) .img-mensaje-bot {
+    /* Estilos específicos para el segundo div de clase "img-mensaje" dentro de contenedor-mensaje.bot */
+    background: none;
+    border: .5rem transparent solid;
+}
+
+/* mensaje */
+.contenedor-mensaje .mensaje {
+    padding: 1.5625rem 1.25rem;
+    background: rgba(217, 217, 217, 0.3);
+    border-radius: 1.25rem 1.25rem 1.25rem 0;
+    font-size: 1.25rem;
+    font-family: Didact Gothic, sans-serif;
+    font-weight: 400;
+    width: fit-content;
+    max-width: 60%;
+}
+
+.mensaje p {
+    margin: 0;
+    text-align: justify;
+}
+
+/*Estilos para los mensajes de usuario*/
+.contenedor-chat .usuario {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.mensaje.msgUsuario {
+    background-color: #1cb698;
+    border-radius: .625rem .625rem 0rem .625rem;
+    color: white;
+}
+
+.contenedor-mensaje .msg-usuario {
+    background: rgba(23, 23, 23, 0.5);
+    border-radius: 1.25rem 1.25rem 0 1.25rem;
+}
+
+/* Estilos para el contenedor de la caja de texto */
+.contenedor-enviar-mensaje {
+    width: 100%;
+    height: 19%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    flex-wrap: wrap;
+}
+
+.contenedor-enviar-mensaje .contenedor-caja-texto {
+    width: 85.432%;
+    height: 64.96%;
+    position: relative;
+}
+
+.contenedor-caja-texto .caja-texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 89.708%;
+    height: auto;
+    padding: 1.25rem 3.125rem 0 3.125rem;
+    border-radius: 2.1875rem;
+    font-size: 1.25rem;
+    resize: none;
+    position: absolute;
+    bottom: 0;
+    max-height: 30vh;
+}
+
+.contenedor-enviar-mensaje .btn-enviar {
+    width: 3.75rem;
+    height: 3.75rem;
+    border-radius: 50%;
+    background: #535353;
+    border: none;
+    transition: background 0.2s ease, color 0.3s ease;
+    visibility: hidden;
+}
+
+.contenedor-enviar-mensaje .btn-enviar:hover {
+    background: #27ae60;
+}
+
+.btn-enviar img {
+    width: 30px;
+    cursor: pointer;
+}
+
+/*animacion para la aparicion del chat*/
+.contenedor-chatbot.animado {
+    clip-path: circle(150% at 100% 0);
+}
+
+/* Agrega estilos de la ventana modal */
+#modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+#modal-content {
+    background: #fff;
+    width: 90%; /* Ajustado para que el contenido ocupe el 90% del ancho del modal */
+    max-width: 900px; /* Establece un máximo para dispositivos más grandes */
+    height: 90%;
+    margin: 0 auto;
+    padding: 10px; /* Añade un espacio interno para mejorar la apariencia */
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Agrega sombra para resaltar el modal */
+}
+
+#cerrar-modal {
+    position: absolute;
+    top: .625rem;
+    right: .625rem;
+    cursor: pointer;
+    color: #fff;
+    font-size: 2rem;
+    border-radius: 50%;
+    background: #27ae60;
+    width: 2rem;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+}
+
+/*=============================================== Diseño Responsive ======================================*/
+/*Movil*/
+@media only screen and (max-width: 47.9375rem) {
+
+    /*Seccion home*/
+    .contenedor-tarjeta-presentacion {
+        flex-direction: column-reverse;
+        padding: 0 3.75rem;
+        justify-content: center;
+    }
+
+    .tarjeta-presentacion h1 {
+        font-size: 2.0625rem;
+        margin-bottom: .625rem;
+    }
+
+    .tarjeta-presentacion .mi-stack {
+        font-size: .8125rem;
+        height: auto;
+    }
+
+    .tarjeta-presentacion p span.escritura-texto {
+        font-weight: normal;
+        color: #828282;
+        font-size: .8125rem;
+    }
+
+    .tarjeta-presentacion .botones {
+        margin-top: 48px;
+        justify-content: space-between;
+    }
+
+    .botones a {
+        width: 7.0625rem;
+        padding: .625rem 0;
+        font-size: .75rem;
+        justify-content: center;
+    }
+
+    /*Avatar home*/
+    .imagen-presentacion {
+        width: 9.375rem;
+        height: 9.375rem;
+        margin-bottom: 1.875rem;
+    }
+
+    .imagen-presentacion .circulo-fondo {
+        width: 8.125rem;
+        height: 8.125rem;
+    }
+
+    /*Barra navegacion*/
+    .barra-navegacion:hover {
+        transform: scale(1);
+    }
+
+    /*============ Estilos para seccion Sobre Mi ============*/
+    .contenedor-sobre-mi .contenedor-tarjeta-sobre-mi {
+        width: 79.73%;
+    }
+
+    .contenedor-sobre-mi .contenedor-tarjeta-sobre-mi h1 {
+        font-size: 2.5rem;
+    }
+
+    .contenedor-sobre-mi .contenedor-tarjeta-sobre-mi p {
+        font-size: .875rem;
+        text-align: center;
+    }
+
+    .contenedor-tarjeta-sobre-mi .contenedor-iconos {
+        margin-top: 2.5rem;
+    }
+
+    .contenedor-iconos .informacion-iconos {
+        margin-bottom: 1.5625rem;
+        width: 45.98983%;
+    }
+
+    .informacion-iconos .circulo-icono-grande {
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+
+    .informacion-iconos .circulo-icono-pequeño {
+        width: .5rem;
+        height: .5rem;
+    }
+
+    .informacion-iconos .info-icono-texto h2 {
+        margin: .9375rem 0 .1875rem;
+        font-size: .8125rem;
+    }
+
+    .informacion-iconos .info-icono-texto p {
+        font-size: .75rem;
+    }
+
+    /*============ Estilos para seccion Lo que hago ============*/
+    .contenedor-lo-que-hago {
+        width: 88.8889%;
+        justify-content: space-evenly;
+    }
+
+    .contenedor-lo-que-hago h1 {
+        font-size: 2.5rem;
+        margin: 0;
+    }
+
+    .contenedor-lo-que-hago .contenedor-tarjetas-lo-que-hago {
+        display: flex;
+        width: 100%;
+        height: 14.8125rem;
+        position: relative;
+    }
+
+    .contenedor-tarjetas-lo-que-hago .tarjeta {
+        width: 9.375rem;
+        height: 6.4375rem;
+    }
+
+    .tarjeta .icono-tarjeta {
+        padding-left: 1.3125rem;
+        width: 1.25rem;
+    }
+
+    .tarjeta p {
+        padding: .9375rem 0 .9375rem 1.25rem;
+        font-size: .9375rem;
+    }
+
+    .contenedor-tarjetas-lo-que-hago .diseño-movil {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .contenedor-lo-que-hago .slider-fondo {
+        margin-top: 0;
+    }
+
+    .contenedor-slider .slide {
+        width: 5.5625rem;
+    }
+
+    /*============ Estilos para seccion Proyectos ============*/
+    .contenedor-mis-proyectos {
+        height: 100vh;
+    }
+
+    .contenedor-mis-proyectos h1 {
+        font-size: 2.5rem;
+    }
+
+    .contenedor-mis-proyectos .contenedor-slider-proyectos {
+        height: 30.9375rem;
+        margin-top: .9375rem;
+    }
+
+    .contenedor-slider-proyectos .slider-proyectos {
+        height: 100%;
+    }
+
+    .slider-proyectos .contenedor-tarjeta-proyectos {
+        height: 30.9375rem;
+    }
+
+    .contenedor-tarjeta-proyectos .tarjeta-proyecto {
+        flex-direction: column;
+        padding: 1.25rem .9375rem;
+        width: 18.125rem;
+        height: 28.4375rem;
+        flex-wrap: wrap;
+        margin: 0 calc((100vw - 20rem) / 2);
+    }
+
+    .tarjeta-proyecto .img-proyecto {
+        width: 18.125rem;
+        margin-bottom: .625rem;
+    }
+
+    .tarjeta-proyecto .img-proyecto img {
+        border-radius: 1.25rem;
+    }
+
+    .tarjeta-proyecto .info-proyecto {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .info-proyecto h2 {
+        font-size: 1.25rem;
+    }
+
+    .info-proyecto .cargo {
+        font-size: .875rem;
+    }
+
+    .info-proyecto .tecnologias-que-use-texto {
+        font-size: .875rem;
+    }
+
+    .info-proyecto .tecnologias-contenedor {
+        margin-left: .3125rem;
+        width: 95%;
+        height: auto;
+        margin-bottom: 1.25rem;
+    }
+
+    .tecnologias-contenedor .tecnologias {
+        padding: .375rem .875rem .375rem .5rem;
+    }
+
+    .tecnologias-contenedor img {
+        width: 1.25rem;
+    }
+
+    .info-proyecto .btn-ir-proyecto {
+        height: 33px;
+        padding: .1563rem .6613rem;
+    }
+
+    .btn-ir-proyecto i {
+        font-size: 1.5rem;
+        margin-right: 8px;
+    }
+
+    .btn-ir-proyecto p {
+        font-size: 1rem;
+    }
+
+    .contenedor-tarjeta-proyectos .contenedor-detalles-proyectos {
+        height: 100%;
+        position: relative;
+    }
+
+    .contenedor-detalles-proyectos .img-icono-info {
+        padding: .625rem;
+        width: 1.125rem;
+        height: 1.125rem;
+        position: absolute;
+        top: 35%;
+        left: -15vw;
+    }
+
+    .img-icono-info img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .img-icono-info::before {
+        top: 115%;
+    }
+
+    .contenedor-slider-proyectos .contenedor-index-tarjeta {
+        top: 97%;
+        width: 3.3125rem;
+        height: .5rem;
+    }
+
+    .contenedor-index-tarjeta .index {
+        width: .5rem;
+        height: .5rem;
+    }
+
+    .contenedor-slider-proyectos .contenedor-botones-slider {
+        width: 97.209vw;
+    }
+
+    .contenedor-botones-slider .boton-slider {
+        width: 1.875rem;
+        height: 1.875rem;
+    }
+
+    /*====================== Seccion contacto ================================*/
+
+    .contenedor-contactame {
+        height: 100vh;
+    }
+
+    .contenedor-formulario {
+        width: 77.79%;
+    }
+
+    .formulario input {
+        width: 100%;
+        padding: .625rem 0;
+        margin-bottom: .625rem;
+        font-size: .875rem;
+    }
+
+    .formulario textarea {
+        width: 99.4695%;
+        height: 6.875rem;
+        margin: .625rem 0 1.875rem;
+        font-size: .875rem;
+    }
+
+    .formulario .contenedor-boton {
+        justify-content: start;
+    }
+
+    .contenedor-boton button {
+        font-size: .875rem;
+    }
+
+    .contenedor-contactame .imagen-contactame {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .imagen-contactame img {
+        width: 160px;
+        height: auto;
+        position: absolute;
+        bottom: -60px;
+    }
+
+    /*================================= Estilos para el chatbot ===================================*/
+
+    .contenedor-chatbot {
+        height: 100vh;
+    }
+
+    .contenedor-chatbot .chat-bot {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+    }
+
+    .chat-bot .contenedor-chat {
+        padding: 1.25rem 1.25rem 1.25rem 0.5rem;
+        width: calc(100% - (1.25rem + 0.5rem));
+    }
+
+    .contenedor-chat .contenedor-mensaje {
+        margin-bottom: .625rem;
+    }
+
+    .contenedor-mensaje .img-mensaje-bot {
+        width: 2.1875rem;
+        height: 2.1875rem;
+        display: flex;
+        justify-content: center;
+        border: .3125rem #212121 solid;
+        background: #c4c4c4;
+        margin-right: .3125rem;
+    }
+
+    .img-mensaje-bot img {
+        width: 2.1875rem;
+    }
+
+    .contenedor-mensaje .mensaje {
+        padding: .625rem;
+        font-size: .875rem;
+        border-radius: .625rem .625rem .625rem 0;
+    }
+
+    .contenedor-mensaje .msg-usuario {
+        border-radius: 10px 10px 0 10px;
+    }
+
+    .contenedor-enviar-mensaje {
+        height: 14.88%;
+    }
+
+    .contenedor-enviar-mensaje .contenedor-caja-texto {
+        width: 15.625rem;
+        height: 3.125rem;
+    }
+
+    .contenedor-caja-texto .caja-texto {
+        width: 83.2%;
+        height: auto;
+        padding: .9375rem 1.25rem 0 1.25rem;
+        border-radius: 1.5625rem;
+        font-size: .9375rem;
+    }
+
+    .contenedor-enviar-mensaje .btn-enviar {
+        width: 2.1875rem;
+        height: 2.1875rem;
+        cursor: pointer;
+    }
+
+    .btn-enviar img {
+        width: 1.0625rem;
+
+    }
+
+}
+
+/*Tablet*/
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+
+    .encabezado h1 {
+        font-size: 40px;
+    }
+
+    .contenedor-mensaje-icono {
+        width: 46px;
+    }
+
+    /*Seccion home*/
+    .contenedor-tarjeta-presentacion {
+        flex-direction: column-reverse;
+        padding: 0 3.75rem;
+        justify-content: center;
+    }
+
+    .tarjeta-presentacion h1 {
+        font-size: 5.0625rem;
+        margin-bottom: .625rem;
+    }
+
+    .tarjeta-presentacion .mi-stack {
+        font-size: 1.8125rem;
+        height: auto;
+    }
+
+    .tarjeta-presentacion p span.escritura-texto {
+        font-weight: normal;
+        color: #828282;
+        font-size: 1.8125rem;
+    }
+
+    .tarjeta-presentacion .botones {
+        margin-top: 48px;
+        justify-content: space-between;
+    }
+
+    .botones a {
+        width: 15.0625rem;
+        padding: 1.625rem 0;
+        font-size: 1.75rem;
+        justify-content: center;
+        border-radius: 45px;
+    }
+
+    /*Avatar home*/
+    .imagen-presentacion {
+        width: 16.375rem;
+        height: 16.375rem;
+        margin-bottom: 1.875rem;
+    }
+
+    .imagen-presentacion .circulo-fondo {
+        width: 15.125rem;
+        height: 15.125rem;
+    }
+
+    /*Barra navegacion*/
+
+    .barra-navegacion {
+        transform: scale(1.5);
+    }
+
+    .barra-navegacion:hover {
+        transform: scale(1.5);
+    }
+
+    /*============ Estilos para seccion Sobre Mi ============*/
+    .contenedor-sobre-mi .contenedor-tarjeta-sobre-mi {
+        width: 79.73%;
+    }
+
+    .contenedor-sobre-mi .contenedor-tarjeta-sobre-mi h1 {
+        font-size: 3.5rem;
+    }
+
+    .contenedor-sobre-mi .contenedor-tarjeta-sobre-mi p {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .contenedor-tarjeta-sobre-mi .contenedor-iconos {
+        margin-top: 2.5rem;
+    }
+
+    .contenedor-iconos .informacion-iconos {
+        margin-bottom: 1.5625rem;
+        width: 45.98983%;
+    }
+
+    .informacion-iconos .circulo-icono-grande {
+        width: 3.25rem;
+        height: 3.25rem;
+    }
+
+    .informacion-iconos .circulo-icono-pequeño {
+        width: .5rem;
+        height: .5rem;
+    }
+
+    .informacion-iconos .info-icono-texto h2 {
+        margin: .9375rem 0 .1875rem;
+        font-size: 1.8rem;
+    }
+
+    .informacion-iconos .info-icono-texto p {
+        font-size: 1.5rem;
+    }
+
+    /*============ Estilos para seccion Lo que hago ============*/
+    .contenedor-lo-que-hago {
+        width: 88.8889%;
+        justify-content: space-evenly;
+    }
+
+    .contenedor-lo-que-hago h1 {
+        font-size: 3.5rem;
+        margin: 0;
+    }
+
+    .contenedor-lo-que-hago .contenedor-tarjetas-lo-que-hago {
+        display: flex;
+        width: 100%;
+        height: 21.8125rem;
+        position: relative;
+    }
+
+    .contenedor-tarjetas-lo-que-hago .tarjeta {
+        width: 13.375rem;
+        height: 9.4375rem;
+    }
+
+    .tarjeta .icono-tarjeta {
+        padding-left: 1.3125rem;
+        width: 2.25rem;
+    }
+
+    .tarjeta p {
+        padding: .9375rem 0 .9375rem 1.25rem;
+        font-size: 1.5rem;
+    }
+
+    .contenedor-tarjetas-lo-que-hago .diseño-movil {
+        position: absolute;
+        top: 55%;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .contenedor-lo-que-hago .slider-fondo {
+        margin-top: 0;
+    }
+
+    .contenedor-slider .slide {
+        width: 8.5625rem;
+    }
+
+    /*============ Estilos para seccion Proyectos ============*/
+    .contenedor-mis-proyectos {
+        height: 100vh;
+    }
+
+    .contenedor-mis-proyectos h1 {
+        font-size: 3.5rem;
+    }
+
+    .contenedor-mis-proyectos .contenedor-slider-proyectos {
+        height: 40.9375rem;
+        margin-top: .9375rem;
+    }
+
+    .contenedor-slider-proyectos .slider-proyectos {
+        height: 100%;
+    }
+
+    .slider-proyectos .contenedor-tarjeta-proyectos {
+        height: 42.9375rem;
+    }
+
+    .contenedor-tarjeta-proyectos .tarjeta-proyecto {
+        flex-direction: column;
+        padding: 2rem 1.9375rem;
+        width: 27.125rem;
+        height: 86%;
+        flex-wrap: wrap;
+        margin: 0 calc((100vw - 29rem) / 2);
+    }
+
+    .tarjeta-proyecto .img-proyecto {
+        width: 24.125rem;
+        margin-bottom: .625rem;
+    }
+
+    .tarjeta-proyecto .img-proyecto img {
+        border-radius: 1.25rem;
+    }
+
+    .tarjeta-proyecto .info-proyecto {
+        width: 100%;
+        height: auto;
+        margin: 0;
+    }
+
+    .info-proyecto h2 {
+        font-size: 2.25rem;
+    }
+
+    .info-proyecto .cargo {
+        font-size: 1.4rem;
+    }
+
+    .info-proyecto .tecnologias-que-use-texto {
+        font-size: 1.4rem;
+    }
+
+    .info-proyecto .tecnologias-contenedor {
+        margin-left: .3125rem;
+        width: 95%;
+        height: auto;
+        margin-bottom: 1.25rem;
+    }
+
+    .tecnologias-contenedor .tecnologias {
+        padding: .6rem 1rem .6rem .8rem;
+    }
+
+    .tecnologias-contenedor img {
+        width: 2rem;
+    }
+
+    .info-proyecto .btn-ir-proyecto {
+        height: 46px;
+        padding: .8rem .6613rem;
+    }
+
+    .btn-ir-proyecto i {
+        font-size: 1.6rem;
+        margin-right: 8px;
+    }
+
+    .btn-ir-proyecto p {
+        font-size: 1rem;
+    }
+
+    .contenedor-tarjeta-proyectos .contenedor-detalles-proyectos {
+        height: 100%;
+        position: relative;
+    }
+
+    .contenedor-detalles-proyectos .img-icono-info {
+        padding: .625rem;
+        width: 2.125rem;
+        height: 2.125rem;
+        position: absolute;
+        top: 40%;
+        left: -7vw;
+    }
+
+    .img-icono-info img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .img-icono-info::before {
+        top: 115%;
+        font-size: 1rem;
+    }
+
+    .contenedor-slider-proyectos .contenedor-index-tarjeta {
+        top: 97%;
+        width: 3.3125rem;
+        height: .5rem;
+    }
+
+    .contenedor-index-tarjeta .index {
+        width: .6rem;
+        height: .6rem;
+    }
+
+    .contenedor-slider-proyectos .contenedor-botones-slider {
+        width: 97.209vw;
+    }
+
+    .contenedor-botones-slider .boton-slider {
+        width: 2.875rem;
+        height: 2.875rem;
+    }
+
+    /*====================== Seccion contacto ================================*/
+
+
+    .contenedor-contactame h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin: 1.875rem 0;
+    }
+    
+
+    .contenedor-formulario {
+        width: 77.79%;
+    }
+
+    .formulario input {
+        width: 100%;
+        padding: 1rem 0;
+        margin-bottom: .625rem;
+        font-size: 1.5rem;
+    }
+
+    .formulario textarea {
+        width: 99.4695%;
+        height: 12.875rem;
+        margin: 1rem 0 1.875rem;
+        font-size: 1.5rem;
+    }
+
+    .formulario .contenedor-boton {
+        justify-content: start;
+    }
+
+    .contenedor-boton button {
+        font-size: 1.5rem;
+    }
+
+    .contenedor-contactame .imagen-contactame {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .imagen-contactame img {
+        width: 260px;
+        height: auto;
+        position: absolute;
+        bottom: -22vh;
+    }
+
+    /*================================= Estilos para el chatbot ===================================*/
+
+    .contenedor-chatbot {
+        top: 6.4rem;
+        height: 100vh;
+    }
+
+    .contenedor-chatbot .chat-bot {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+        border: none;
+    }
+
+    .chat-bot .contenedor-chat {
+        padding: 1.25rem;
+        width: calc(100% - 1.25rem * 2);
+    }
+
+    .contenedor-chat .contenedor-mensaje {
+        margin-bottom: 1.625rem;
+    }
+
+    .contenedor-mensaje .img-mensaje-bot {
+        width: 2.1875rem;
+        height: 2.1875rem;
+        display: flex;
+        justify-content: center;
+        border: .3125rem #212121 solid;
+        background: #c4c4c4;
+        margin-right: .3125rem;
+    }
+
+    .img-mensaje-bot img {
+        width: 2.1875rem;
+    }
+
+    .contenedor-mensaje .mensaje {
+        padding: 1.2rem;
+        font-size: 1.5rem;
+    }
+
+    .contenedor-enviar-mensaje {
+        height: 14.88%;
+    }
+
+    .contenedor-enviar-mensaje .contenedor-caja-texto {
+        width: 35.625rem;
+        height: 4.125rem;
+    }
+
+    .contenedor-caja-texto .caja-texto {
+        width: 83.2%;
+        height: auto;
+        padding: 0.9375rem 1.25rem 0 1.25rem;
+        border-radius: 2.5625rem;
+        font-size: 1.5rem;
+    }
+
+    .contenedor-enviar-mensaje .btn-enviar {
+        width: 4.1875rem;
+        height: 4.1875rem;
+        cursor: pointer;
+    }
+
+    .btn-enviar img {
+        width: 2.0625rem;
+    }
+
+}

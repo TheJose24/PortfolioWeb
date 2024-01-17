@@ -1,0 +1,11 @@
+com\devbyjose\portfolio\controller\ChatbotController.class
+com\devbyjose\portfolio\service\ChatbotService.class
+com\devbyjose\portfolio\service\EmailService.class
+com\devbyjose\portfolio\configuration\EmailConfiguration.class
+com\devbyjose\portfolio\configuration\OpenAiConfiguration.class
+com\devbyjose\portfolio\controller\ImageController.class
+com\devbyjose\portfolio\model\Usuario.class
+com\devbyjose\portfolio\controller\ContactController.class
+com\devbyjose\portfolio\model\PreguntaUsuario.class
+com\devbyjose\portfolio\MiPortafolioWebApplication.class
+com\devbyjose\portfolio\controller\HomeController.class

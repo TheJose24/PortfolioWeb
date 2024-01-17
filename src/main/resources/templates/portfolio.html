@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DevByJose - Inicio</title>
+    <link rel="shortcut icon" href="/images/icons/ico/logo-icono.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/style.css" />
+</head>
+
+<body id="body">
+
+    <!--Boton ChatBot-->
+    <div class="contenedor-chatbot" id="contenedor-chatbot">
+        <div class="chat-bot">
+            <div class="contenedor-chat" id="chat">
+                <div class="contenedor-mensaje bot">
+                    <div class="img-mensaje-bot">
+                        <img src="/images/avatars/avatar-presentacion.svg" alt="">
+                    </div>
+                    <div class="mensaje msg-bot" id="mensajeAsistente">
+                        <p>
+                            ¡Hola!👋 Soy Jose, y estoy encantado de darte la bienvenida a mi
+                            espacio digital.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="contenedor-mensaje bot">
+                    <div class="img-mensaje-bot"></div>
+                    <div class="mensaje msg-bot">
+                        <p>
+                            Como programador y apasionado por la tecnología, he creado este bot
+                            personalizado para que puedas explorar mi mundo de habilidades
+                            y experiencias.
+                        </p>
+                    </div>
+                </div>
+
+                <!--
+                    <div class="contenedor-mensaje usuario">
+                        <div class="mensaje msg-usuario" id="mensajeUsuario">
+                            ¡Hola!👋.
+                        </div>
+                    </div>
+                -->
+            </div>
+
+            <form class="contenedor-enviar-mensaje">
+                <div class="contenedor-caja-texto">
+                    <textarea class="caja-texto" id="cajaTexto" placeholder="Escribe un mensaje..."
+                        oninput="capitalizarPrimeraLetra()"></textarea>
+                </div>
+
+
+                <button class="btn-enviar" id="btnEnviar" type="button" onclick="enviar()">
+                    <img src="/images/icons/png/enviar-mensaje.png" alt="">
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <header class="encabezado">
+        <div class="marca-personal">
+            <h1>DevByJose</h1>
+        </div>
+        <div class="contenedor-mensaje-icono" id="mensaje-icono" onclick=" clickear()">
+            <img id="icono-mensaje-chat" src="/images/icons/svg/notificacion-mensaje.svg" alt="Icono de mensaje">
+        </div>
+    </header>
+
+    <main class="contenedor-secciones">
+        <div id="modal">
+            <div id="modal-content">
+                <span id="cerrar-modal"  onclick="cerrarModal()"><i class="fa-solid fa-xmark"></i></span>
+                <embed src="/pdf/Jose_Sanchez_CV_Backend.pdf" type="application/pdf" width="100%" height="100%" />
+            </div>
+        </div>
+
+        <section class="seccion activa" id="inicio">
+            <main class="contenedor-tarjeta-presentacion">
+                <div class="tarjeta-presentacion">
+                    <h1>Hola, soy <br>
+                        Jose Sanchez</h1>
+                    <p class="mi-stack"><span class="escritura-texto"></span>
+                        <span class="cursor tipeado">&nbsp;</span>
+                    </p>
+                    <div class="botones">
+                        <a href="#cv" class="descargar-cv" onclick="abrirModal()">Previsualizar CV</a>
+                        <div data-target="contacto">
+                            <a href="#contacto" class="contactame"
+                                onclick="simularClicBarraNavegacion('enlaceContacto')">Contáctame</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="imagen-presentacion">
+                    <div class="circulo-fondo"></div>
+                    <img src="/images/avatars/avatar-presentacion.svg" alt="Imagen de presentacion">
+                </div>
+            </main>
+        </section>
+
+        <section class="seccion" id="sobreMi">
+            <main class="contenedor-sobre-mi">
+
+                <section class="contenedor-tarjeta-sobre-mi">
+
+                    <h1>Sobre Mi</h1>
+                    <p>Hola, Soy Jose Sanchez. Estudiante de Ingeniería de Sistemas y graduado del programa <br>
+                        Oracle Next Education. Tengo experiencia en proyectos academicos y personales. <br>
+                        He liderado equipos y colaborado en proyectos de programación. Estoy interesado en <br>
+                        el desarrollo web y la Inteligencia Artificial</p>
+                    <div class="contenedor-iconos">
+                        <div class="informacion-iconos">
+                            <div class="circulo-icono-grande">
+                                <div class="circulo-icono-pequeño"></div>
+                            </div>
+
+                            <div class="info-icono-texto">
+                                <h2>Cumpleaños</h2>
+                                <p>24-04-2002</p>
+                            </div>
+                        </div>
+
+                        <div class="informacion-iconos">
+                            <div class="circulo-icono-grande">
+                                <div class="circulo-icono-pequeño"></div>
+                            </div>
+
+                            <div class="info-icono-texto">
+                                <h2>Email</h2>
+                                <p>devbyjose@gmail.com</p>
+                            </div>
+                        </div>
+
+                        <div class="informacion-iconos">
+                            <div class="circulo-icono-grande">
+                                <div class="circulo-icono-pequeño"></div>
+                            </div>
+
+                            <div class="info-icono-texto">
+                                <h2>Telefono</h2>
+                                <p>+51 950532495</p>
+                            </div>
+                        </div>
+
+                        <div class="informacion-iconos">
+                            <div class="circulo-icono-grande">
+                                <div class="circulo-icono-pequeño"></div>
+                            </div>
+
+                            <div class="info-icono-texto">
+                                <h2>Perfil</h2>
+                                <p>Desarrollador Full Stack</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </section>
+
+                <section class="contenedor-lo-que-hago">
+                    <h1>Lo que hago</h1>
+
+                    <div class="contenedor-tarjetas-lo-que-hago">
+                        <div class="tarjeta">
+                            <img src="/images/icons/svg/icono-desarrollo-software.svg" alt="" class="icono-tarjeta">
+                            <p>Desarollo <br> Software</p>
+                        </div>
+                        <div class="tarjeta diseño-movil">
+                            <img src="/images/icons/svg/icono-desarrollo-web.svg" alt="" class="icono-tarjeta">
+                            <p>Desarollo <br> Web</p>
+                            <div class="linea"></div>
+                        </div>
+                        <div class="tarjeta">
+                            <img src="/images/icons/svg/icono-diseño-web.svg" alt="" class="icono-tarjeta">
+                            <p>Diseño<br> Web</p>
+                        </div>
+                    </div>
+
+                    <div class="slider-fondo">
+                        <div class="contenedor-slider">
+                            <div class="slide-track">
+
+                                <div class="slide">
+                                    <img src="/images/technologies/html-5 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/css-3 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/js 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/java 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/piton 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/springboot 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/flask 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/servidor-sql 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/mysql 1.png" alt="">
+                                </div>
+
+
+                                <div class="slide">
+                                    <img src="/images/technologies/html-5 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/css-3 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/js 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/java 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/piton 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/springboot 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/flask 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/servidor-sql 1.png" alt="">
+                                </div>
+
+                                <div class="slide">
+                                    <img src="/images/technologies/mysql 1.png" alt="">
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                </section>
+
+
+            </main>
+
+        </section>
+
+        <section class="seccion" id="proyectos">
+            <main class="contenedor-mis-proyectos">
+                <h1>Mis Proyectos</h1>
+                <div class="contenedor-slider-proyectos">
+
+                    <div class="slider-proyectos">
+
+                        <div class="contenedor-tarjeta-proyectos" id="tarjeta1">
+                            <div class="tarjeta-proyecto">
+
+                                <div class="img-proyecto">
+                                    <img src="/images/projects-image/alfred-proyecto.svg" alt="">
+                                </div>
+                                <div class="info-proyecto">
+                                    <h2>Asistente A.L.F.R.E.D.</h2>
+                                    <p class="cargo">Desarrollador Full Stack</p>
+
+                                    <p class="tecnologias-que-use-texto">Tecnologias que use</p>
+                                    <div class="tecnologias-contenedor">
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/html-5 1.png" alt="">
+                                            <p>HTML</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/css-3 1.png" alt="">
+                                            <p>CSS</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/js 1.png" alt="">
+                                            <p>JavaScript</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/piton 1.png" alt="">
+                                            <p>Python</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/three-js.png" alt="">
+                                            <p>Three.js</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/flask 1.png" alt="">
+                                            <p>Flask</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/git.png" alt="">
+                                            <p>Git</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/github-v2.png" alt="">
+                                            <p>GitHub</p>
+                                        </div>
+
+                                    </div>
+
+                                    <a class="btn-ir-proyecto" href="https://a-l-f-r-e-d.onrender.com/" target="_blank">
+                                        <i class="fa-solid fa-link"></i>
+                                        <p>Ir a Asistente A.L.F.R.E.D.</p>
+                                    </a>
+
+                                </div>
+
+                                <div class="contenedor-detalles-proyectos">
+                                    <div class="img-icono-info" data-text="Mi Rol">
+                                        <img src="/images/icons/png/informacion-v2.png" alt="">
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="contenedor-tarjeta-proyectos" id="tarjeta2">
+                            <div class="tarjeta-proyecto">
+                                <div class="img-proyecto">
+                                    <img src="/images/projects-image/Encriptador-proyecto.svg" alt="">
+                                </div>
+                                <div class="info-proyecto">
+                                    <h2>Encriptador de textos</h2>
+                                    <p class="cargo">Desarrollador Front End</p>
+
+                                    <p class="tecnologias-que-use-texto">Tecnologias que use</p>
+                                    <div class="tecnologias-contenedor">
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/html-5 1.png" alt="">
+                                            <p>HTML</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/css-3 1.png" alt="">
+                                            <p>CSS</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/js 1.png" alt="">
+                                            <p>JavaScript</p>
+                                        </div>
+
+
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/git.png" alt="">
+                                            <p>Git</p>
+                                        </div>
+
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/github-v2.png" alt="">
+                                            <p>GitHub</p>
+                                        </div>
+
+                                    </div>
+
+                                    <a class="btn-ir-proyecto" href="https://thejose24.github.io/Challenge-ONE/"
+                                        target="_blank">
+                                        <i class="fa-solid fa-link"></i>
+                                        <p>Ir a Encriptador de textos</p>
+                                    </a>
+
+                                </div>
+
+                                <div class="contenedor-detalles-proyectos">
+                                    <div class="img-icono-info" data-text="Mi Rol">
+                                        <img src="/images/icons/png/informacion-v2.png" alt="">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="contenedor-tarjeta-proyectos" id="tarjeta3">
+                            <div class="tarjeta-proyecto">
+                                <div class="img-proyecto">
+                                    <img src="/images/projects-image/Sistema-ventas-proyecto.svg" alt="">
+                                </div>
+                                <div class="info-proyecto">
+                                    <h2>Sistema de eventos</h2>
+                                    <p class="cargo">Desarrollador Java</p>
+
+                                    <p class="tecnologias-que-use-texto">Tecnologias que use</p>
+                                    <div class="tecnologias-contenedor">
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/java 1.png" alt="">
+                                            <p>Java</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/git.png" alt="">
+                                            <p>Git</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/github-v2.png" alt="">
+                                            <p>GitHub</p>
+                                        </div>
+
+                                    </div>
+
+                                    <a class="btn-ir-proyecto"
+                                        href="https://github.com/TheJose24/SistemaVentasConcierto" target="_blank">
+                                        <i class="fa-solid fa-link"></i>
+                                        <p>Ir al repositorio</p>
+                                    </a>
+
+                                </div>
+
+                                <div class="contenedor-detalles-proyectos">
+                                    <div class="img-icono-info" data-text="Mi Rol">
+                                        <img src="/images/icons/png/informacion-v2.png" alt="">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="contenedor-tarjeta-proyectos" id="tarjeta4">
+                            <div class="tarjeta-proyecto">
+                                <div class="img-proyecto">
+                                    <img src="/images/projects-image/sitioWeb-v1-proyecto.svg" alt="">
+                                </div>
+                                <div class="info-proyecto">
+                                    <h2>Portafolio Web v1</h2>
+                                    <p class="cargo">Desarrollador Full Stack</p>
+
+                                    <p class="tecnologias-que-use-texto">Tecnologias que use</p>
+                                    <div class="tecnologias-contenedor">
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/html-5 1.png" alt="">
+                                            <p>HTML</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/css-3 1.png" alt="">
+                                            <p>CSS</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/js 1.png" alt="">
+                                            <p>JavaScript</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/java 1.png" alt="">
+                                            <p>Java</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/springboot 1.png" alt="">
+                                            <p>SpringBoot</p>
+                                        </div>
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/git.png" alt="">
+                                            <p>Git</p>
+                                        </div>
+
+
+                                        <div class="tecnologias">
+                                            <img src="/images/technologies/github-v2.png" alt="">
+                                            <p>GitHub</p>
+                                        </div>
+
+                                    </div>
+
+                                    <a class="btn-ir-proyecto" href="https://github.com/TheJose24/WebSite-2.0"
+                                        target="_blank">
+                                        <i class="fa-solid fa-link"></i>
+                                        <p>Ir al repositorio</p>
+                                    </a>
+
+                                </div>
+
+                                <div class="contenedor-detalles-proyectos">
+                                    <div class="img-icono-info" data-text="Mi Rol">
+                                        <img src="/images/icons/png/informacion-v2.png" alt="">
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-index-tarjeta">
+                        <div class="index" id="index-1">
+
+                        </div>
+
+                        <div class="index" id="index-2">
+
+                        </div>
+
+                        <div class="index" id="index-3">
+
+                        </div>
+
+                        <div class="index" id="index-4">
+
+                        </div>
+
+                    </div>
+
+                    <div class="contenedor-botones-slider">
+                        <button class="boton-slider" id="anterior">
+                            <a href="#"><i class="fa-solid fa-chevron-left"></i></a>
+                        </button>
+
+                        <button class="boton-slider" id="siguiente">
+                            <a href="#"><i class="fa-solid fa-chevron-right"></i></a>
+                        </button>
+                    </div>
+
+                </div>
+
+                <div class="contenedor-detalle-proyecto-oculto" id="contenedor-detalle-proyecto-oculto">
+
+                    <div class="caja-detalle-proyecto" id="detalle-tarjeta1">
+                        <header>
+                            <h1>Lo que he hecho en el proyecto</h1>
+                            <div class="contenedor-icono-cerrar">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </header>
+                        <div class="funciones-proyecto">
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Desarrollé un asistente virtual utilizando la API de OpenAI.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Implementé la comunicación y respuestas por voz.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Trabajé en el backend y frontend del proyecto.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Utilicé HTML, CSS y JavaScript para el frontend.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Utilicé Python como lenguaje de programación principal.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="caja-detalle-proyecto" id="detalle-tarjeta2">
+                        <header>
+                            <h1>Lo que he hecho en el proyecto</h1>
+                            <div class="contenedor-icono-cerrar">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </header>
+                        <div class="funciones-proyecto">
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Desarrollé un encriptador de textos como parte de un proyecto personal.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>El programa acepta una cadena de texto como entrada y aplica una transformación para cifrar los caracteres. </p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>El encriptador también permite desencriptar un texto cifrado utilizando el mismo algoritmo inverso.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Diseñé una interfaz intuitiva para que los usuarios puedan interactuar con el programa y encriptar sus textos.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="caja-detalle-proyecto" id="detalle-tarjeta3">
+                        <header>
+                            <h1>Lo que he hecho en el proyecto</h1>
+                            <div class="contenedor-icono-cerrar">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </header>
+                        <div class="funciones-proyecto">
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Desarrollé un asistente virtual utilizando la API de OpenAI.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Implementé la comunicación y respuestas por voz.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Trabajé en el backend y frontend del proyecto.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Utilicé HTML, CSS y JavaScript para el frontend.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Utilicé Python como lenguaje de programación principal.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="caja-detalle-proyecto" id="detalle-tarjeta4">
+                        <header>
+                            <h1>Lo que he hecho en el proyecto</h1>
+                            <div class="contenedor-icono-cerrar">
+                                <i class="fa-solid fa-xmark"></i>
+                            </div>
+                        </header>
+                        <div class="funciones-proyecto">
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Diseñe y desarrolle el front-end utilizando HTML, CSS y JavaScript.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Cree una interfaz de usuario atractiva y fácil de navegar.</p>
+                            </div>
+
+                            <div class="funciones-texto">
+                                <i class="fa-solid fa-caret-right"></i>
+                                <p>Implemente funcionalidades interactivas, como animaciones y efectos visuales.</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </main>
+        </section>
+
+        <section class="seccion" id="contacto">
+            <main class="contenedor-contactame">
+
+                <h1>Contactáme</h1>
+
+                <div class="contenedor-formulario">
+
+                    <form class="formulario" autocomplete="off" id="miFormulario">
+                        <input type="text" id="nombre" placeholder="Nombre" required>
+
+                        <input type="text" id="apellido" placeholder="Apellido" required>
+
+                        <input type="email" id="email" placeholder="Email" required autocomplete="off">
+
+                        <input type="tel" id="telefono" placeholder="Teléfono" required>
+
+                        <textarea id="mensaje" name="mensaje" placeholder="Mensaje" required></textarea>
+
+                        <div class="contenedor-boton">
+                            <button type="submit" id="enviarBtn">
+                                <span id="btnText">Enviar</span>
+                                <span id="spinner" class="spinner"></span>
+                            </button>
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <div class="imagen-contactame">
+                    <img src="/images/avatars/avatar-contactame.svg" alt="Imagen de contacto">
+                </div>
+
+            </main>
+        </section>
+    </main>
+
+    <footer class="contenedor-barra-navegacion" id="footer">
+        <nav class="barra-navegacion">
+            <div class="seccion-1">
+                <div class="contenedor-icono" data-text="Inicio" data-target="inicio">
+                    <a href="#inicio" onclick="mostrarSeccion('inicio', this)"><i class="fa-solid fa-house"></i></a>
+                    <div class="index-activo"></div>
+                </div>
+                <div class="contenedor-icono" data-text="Sobre Mi" data-target="sobreMi">
+                    <a href="#sobreMi" onclick="mostrarSeccion('sobreMi', this)"><i class="fas fa-file-alt"></i></a>
+                </div>
+                <div class="contenedor-icono" data-text="Proyectos" data-target="proyectos">
+                    <a href="#proyectos" onclick="mostrarSeccion('proyectos', this)"><i class="fa-solid fa-star"></i></a>
+                </div>
+            </div>
+            <div class="separador-secciones"></div>
+            <div class="seccion-2">
+                <div class="contenedor-icono" data-text="Contacto" data-target="contacto" id="enlaceContacto">
+                    <a href="#contacto" onclick="mostrarSeccion('contacto', this)"><i class="fas fa-envelope"></i></a>
+                </div>
+                <div class="contenedor-icono" data-text="LinkedIn">
+                    <a href="https://www.linkedin.com/in/jose-sanchez-eisi/" target="_blank">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                </div>
+                <div class="contenedor-icono" data-text="GitHub">
+                    <a href="https://github.com/TheJose24" target="_blank">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="separador-secciones"></div>
+            <div class="seccion-3">
+                <div class="control-musica contenedor-icono" data-text="Musica: On">
+                    <i class="fas fa-volume-up" id="icono-musica"></i>
+                </div>
+                <div class="control-modo-claro contenedor-icono" data-text="Modo Oscuro">
+                    <i class="fa-solid fa-moon" id="icono-modo-claro"></i>
+                </div>
+            </div>
+        </nav>
+    </footer>
+    <audio id="reproductor">
+        <source src="/audio/background-music.mp3" type="audio/mpeg" />
+        Tu navegador no soporta el elemento de audio
+    </audio>
+
+    <script src="/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="/js/sweetAlert.js"></script>
+</body>
+
+</html>
