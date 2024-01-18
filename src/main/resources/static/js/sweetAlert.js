@@ -124,8 +124,6 @@ document.addEventListener('DOMContentLoaded', function () {
             footer: mensajeFooter,
             icon: tipo,
             confirmButtonText: 'Aceptar',
-            width: '40%',
-            maxWidth: '90%',
             padding: '1rem',
             background: '#333333',
             color: '#ffffff',
