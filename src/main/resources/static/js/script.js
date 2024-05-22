@@ -153,7 +153,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function actualizarSlider() {
         const translateValue = -index * 100 + "%";
         sliderProyectos.style.transform = "translateX(" + translateValue + ")";
-    
+
         // Actualizar los estilos de los índices
         indexTarjetas.forEach((indice, i) => {
             if (i === index) {
@@ -390,72 +390,57 @@ function cerrarModal() {
 const cajaTextoChat = document.querySelector(".contenedor-caja-texto textarea");
 const containerChat = document.getElementById("chat");
 
-function enviar(){
-    // Obtiene el texto ingresado por el usuario en la caja de texto
-    msjUsuario = cajaTextoChat.value;
+const CLASE_USUARIO = "usuario";
+const CLASE_BOT = "bot";
+const TIEMPO_ESPERA_RESPUESTA = 700;
 
-    // Verifica que haya texto ingresado antes de agregar el mensaje
-    if (msjUsuario.trim() !== ""){
-        // Crea un nuevo elemento div con la clase "contenedor-mensaje usuario"
-        const nuevoMensajeUsuarioChat = document.createElement("div");
-        nuevoMensajeUsuarioChat.classList.add("contenedor-mensaje", "usuario");
+function crearMensaje(contenedor, clase, contenido, iconoSrc = null) {
+    const nuevoMensaje = document.createElement("div");
+    nuevoMensaje.classList.add("contenedor-mensaje", clase);
 
-        // Crea un nuevo elemento div para el mensaje del usuario
+    if (clase === CLASE_USUARIO) {
         const mensajeUsuario = document.createElement("div");
         mensajeUsuario.classList.add("mensaje", "msg-usuario");
-        mensajeUsuario.textContent = msjUsuario;
+        mensajeUsuario.textContent = contenido;
 
-        // Agrega el mensaje del usuario y el icono al contenedor del mensaje de usuario
-        nuevoMensajeUsuarioChat.appendChild(mensajeUsuario);
+        nuevoMensaje.appendChild(mensajeUsuario);
+    } else {
+        const contenedorIconoBot = document.createElement("div");
+        contenedorIconoBot.classList.add("img-mensaje-bot");
 
-        // Agrega el nuevo mensaje de usuario al contenedor de mensajes
-        containerChat.appendChild(nuevoMensajeUsuarioChat);
+        const iconoBot = document.createElement("img");
+        iconoBot.src = iconoSrc || "/images/avatars/avatar-presentacion.svg";
+        iconoBot.alt = "Imagen de bot";
+
+        contenedorIconoBot.appendChild(iconoBot);
+
+        const mensajeBot = document.createElement("div");
+        mensajeBot.classList.add("mensaje", "msg-bot");
+        mensajeBot.textContent = contenido;
+
+        nuevoMensaje.appendChild(contenedorIconoBot);
+        nuevoMensaje.appendChild(mensajeBot);
+    }
+
+    contenedor.appendChild(nuevoMensaje);
+    return nuevoMensaje;
+}
+
+function enviar() {
+    const msjUsuario = cajaTextoChat.value;
+
+    if (msjUsuario.trim() !== "") {
+        crearMensaje(containerChat, CLASE_USUARIO, msjUsuario);
         containerChat.scrollTo(0, containerChat.scrollHeight);
-
-        // Limpia el contenido de la caja de texto
         cajaTextoChat.value = "";
 
-        //==================== Mensaje de respuesta del bot ====================
-        setTimeout(function (){
-
-            // Crea un nuevo elemento div con la clase "contenedor-mensaje bot"
-            const nuevoMensajeBotChat = document.createElement("div");
-            nuevoMensajeBotChat.classList.add("contenedor-mensaje", "bot");
-
-            // Crea un nuevo elemento div para el icono del asistente con la clase "img-mensaje-bot"
-            const ContenedorIconoBot = document.createElement("div");
-            ContenedorIconoBot.classList.add("img-mensaje-bot");
-
-            // Crea un elemento img y se configura
-            const IconoBot = document.createElement("img");
-            IconoBot.src = "/images/avatars/avatar-presentacion.svg";
-            IconoBot.alt = "Imagen de bot"; // Texto alternativo para la imagen
-
-            // Agrega la imagen del usuario al elemento iconoAsistente
-            ContenedorIconoBot.appendChild(IconoBot);
-
-            // Crea un nuevo elemento div para el mensaje del asistente
-            const mensajeBot = document.createElement("div");
-            mensajeBot.classList.add("mensaje", "msg-bot");
-            mensajeBot.textContent = "Un momento por favor..."
-
-            // Agrega el mensaje del asistente y el icono al contenedor del mensaje de asistente
-            nuevoMensajeBotChat.appendChild(ContenedorIconoBot);
-            nuevoMensajeBotChat.appendChild(mensajeBot);
-
-            // Agrega el nuevo mensaje de asistente al contenedor de mensajes
-            containerChat.appendChild(nuevoMensajeBotChat);
+        // Mensaje de respuesta del bot
+        setTimeout(function () {
+            const mensajeBot = crearMensaje(containerChat, CLASE_BOT, "Un momento por favor...", "/images/avatars/avatar-presentacion.svg");
             containerChat.scrollTo(0, containerChat.scrollHeight);
 
-            // Crea un objeto con el texto del usuario
-            const preguntaUsuario = {
-                pregunta: msjUsuario,
-            };
-            console.log(preguntaUsuario);
+            const preguntaUsuario = { pregunta: msjUsuario };
 
-            let respuestaDelServidor = "";
-
-            // Realiza una solicitud HTTP POST al servidor.
             fetch("/api/chatbot", {
                 method: "POST",
                 headers: {
@@ -463,23 +448,19 @@ function enviar(){
                 },
                 body: JSON.stringify(preguntaUsuario),
             })
-                .then((response) => response.text()) // Convierte la respuesta a texto
+                .then((response) => response.text())
                 .then((data) => {
                     console.log("Respuesta del servidor:", data);
-
-                        respuestaDelServidor = data;
-                        mensajeBot.textContent = respuestaDelServidor;
-                        containerChat.scrollTo(0, containerChat.scrollHeight);
-
+                    mensajeBot.querySelector(".msg-bot").textContent = data;
+                    containerChat.scrollTo(0, containerChat.scrollHeight);
                 })
                 .catch((error) => {
                     console.error("Error al obtener la respuesta del servidor:", error);
                 });
-
-        }, 700);
-
+        }, TIEMPO_ESPERA_RESPUESTA);
     }
 }
+
 
 
 

@@ -782,7 +782,8 @@ html {
 /*=================== Index Tarjeta Slider ===================*/
 
 .contenedor-slider-proyectos .contenedor-index-tarjeta {
-    width: 55px;
+    width: auto;
+    column-gap: 5px;
     height: 10px;
     display: flex;
     justify-content: space-between;
@@ -1084,7 +1085,8 @@ html {
     border-radius: 50%;
 }
 
-.contenedor-mensaje.bot:nth-child(2) .img-mensaje-bot {
+.contenedor-mensaje.bot:nth-child(2) .img-mensaje-bot,
+.contenedor-mensaje.bot:nth-child(3) .img-mensaje-bot{
     /* Estilos específicos para el segundo div de clase "img-mensaje" dentro de contenedor-mensaje.bot */
     background: none;
     border: .5rem transparent solid;

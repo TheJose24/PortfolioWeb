@@ -21,7 +21,7 @@ public class ImageController {
                     .contentType(MediaType.IMAGE_PNG)  // o MediaType.IMAGE_PNG según el tipo de imagen
                     .body(resource);
         } catch (Exception e) {
-            // Manejar el error, por ejemplo, devolver una imagen de error genérica
+            // Manejar el error
             return ResponseEntity.notFound().build();
         }
     }
